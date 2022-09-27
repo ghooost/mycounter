@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <title>Frame test</title>
+  <script type="text/javascript">
+    window.events = window.events || [];
+    (function() {
+      var elem = document.createElement('script');
+      elem.src = "measurement.js";
+      elem.async = true;
+      elem.type = "text/javascript";
+      var scpt = document.getElementsByTagName('script')[0];
+      scpt.parentNode.insertBefore(elem, scpt);
+    })();
+    // The following call should trigger the pixel call
+    window.events.push({
+      "account": "jsengchallange",
+      "labels": "frame"
+    });
+  </script>
+  <body>
+    <iframe src="http://counter.info/simple.html"></iframe>
+  </body>
+</html>
